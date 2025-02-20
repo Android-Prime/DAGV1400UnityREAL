@@ -4,18 +4,37 @@ public class CharacterAnimationController : MonoBehaviour
 {
     private Animator animator;
 
-    void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
         HandleAnimations();
     }
 
     private void HandleAnimations()
     {
+        if (Input.GetAxis("Horizontal") != 0)
+        {
+            animator.SetTrigger("RunTrigger");
+        }
+        else
+        {
+            animator.SetTrigger("IdleTrigger");
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            animator.SetTrigger("JumpTrigger");
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            animator.SetTrigger( "WallJumpTrigger");
+/*           
+        }    
         if (Input.GetButtonDown("Jump"))
         {
             animator.SetTrigger("DoubleJumpTrigger");
@@ -41,6 +60,8 @@ public class CharacterAnimationController : MonoBehaviour
         else
         {
             animator.SetTrigger("IdleTrigger");
+*/
+            
         }
     }
 

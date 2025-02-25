@@ -23,6 +23,10 @@ public class SimpleCharacterController : MonoBehaviour
         MoveCharacter();
         ApplyGravity();
         KeepCharacterOnXAxis();
+        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(f: jumpForce * -2f * gravity);
+        }  
     }
 
     private void MoveCharacter()
@@ -30,11 +34,6 @@ public class SimpleCharacterController : MonoBehaviour
         var moveInput = Input.GetAxis("Horizontal");
         var move= new Vector3(x:moveInput, y:0f, z:0f) * (moveSpeed * Time.deltaTime);
         controller.Move(move);
-
-        if (Input.GetButtonDown("Jump") && controller.isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(f: jumpForce * -2f * gravity);
-        }    
     }
 
     private void ApplyGravity()

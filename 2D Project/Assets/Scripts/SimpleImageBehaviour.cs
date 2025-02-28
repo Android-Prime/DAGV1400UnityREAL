@@ -1,21 +1,26 @@
-/* not done yet, finish with code from scripting 7 assignment*/
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
-public SimpleImageBehaviour : MonoBehaviour
+public class SimpleImageBehaviour : MonoBehaviour
 {
-public SimpleFloatData dataObj;
 private Image _imageObj;
+public SimpleFloatData dataObj;
 
 private void Start()
 {
-    _imageObj = GetComponent<Image>()
+    _imageObj = GetComponent<Image>();
 }
-}
+
+public void UpdateWithFloatData()
 {
+    _imageObj.fillAmount = dataObj.value;
     
 }
-*/
+
+
+    
+}
+   

@@ -14,7 +14,7 @@ private void Start()
     _imageObj = GetComponent<Image>();
 }
 
-public void UpdateWithFloatData()
+public void Update()
 {
     _imageObj.fillAmount = dataObj.value;
     

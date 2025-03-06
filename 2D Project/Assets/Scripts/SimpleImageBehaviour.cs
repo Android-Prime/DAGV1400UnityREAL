@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +19,9 @@ public void Update()
 }
 
 
-    
+public void SetValue(float currentStamina)
+{
+    throw new System.NotImplementedException();
+}
 }
    
